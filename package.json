@@ -1,0 +1,20 @@
+{
+  "name": "single-page-application",
+  "version": "1.0.0",
+  "description": "Project to learn about Vanilla js and SPA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-gumonet:gumonet/single-page-application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "require": {},
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-webserver": "^0.9.1"
+  }
+}
