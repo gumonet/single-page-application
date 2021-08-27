@@ -7,7 +7,7 @@ import { Router } from "./components/Router.js";
 export function App () {
     const d = document,
     $root = d.getElementById("root");
-
+    $root.innerHTML =  null;
     $root.appendChild(Header());
 
     $root.appendChild( Posts() );
