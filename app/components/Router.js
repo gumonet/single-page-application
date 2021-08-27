@@ -1,6 +1,7 @@
 import wp_api from '../helpers/wp_api.js';
 import {ajax} from '../helpers/ajax.js';
 import { PostCard } from './PostCard.js';
+import { Post } from './Post.js';
 
 export async function Router() {
     const d = document;
@@ -25,7 +26,17 @@ export async function Router() {
     }else if( !hash || hash.includes("#/search") ) {
         $main.innerHTML = "Sección del buscador";
     }else {
-        $main.innerHTML = "DEtalle del post";
+       
+       await ajax({
+            url: wp_api.POST + '/' + localStorage.getItem('wpPostID'),
+            cbSucces: ( post ) => {
+                console.log( post );
+               let  $post = Post( post );
+            
+                $main.innerHTML = $post;
+            }
+        })
+        
     }
 
     d.querySelector(".loader").style.display = "none" ;

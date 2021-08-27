@@ -64,7 +64,7 @@ img{
 }
 
 .header{
-    pad: 5rem;
+    padding: 2rem;
     position: sticky;
     top:0;
     text-align: center;
