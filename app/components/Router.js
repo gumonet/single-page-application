@@ -24,7 +24,23 @@ export async function Router() {
             }
         })
     }else if( !hash || hash.includes("#/search") ) {
-        $main.innerHTML = "Sección del buscador";
+        let $query = localStorage.getItem('wpSearch');
+
+        if ( !$query ) return false;
+
+        await ajax({
+            url: wp_api.SEARCH + $query ,
+            cbSucces: ( posts ) => {
+                console.log( posts );
+                /*let html = "";
+                posts.forEach( post => {
+                    html += PostCard( post );
+                });*/
+                $main.innerHTML = '<h1>Hay que crear la vista de busqueda WEEEY! :D</h1>';
+            }
+        })
+
+
     }else {
        
        await ajax({
